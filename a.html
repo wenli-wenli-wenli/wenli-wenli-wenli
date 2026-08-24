@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+<meta charset="UTF-8">
+<title>我的聊天室</title>
+<style>
+body{max-width:800px;margin:30px auto;font-size:16px;}
+#box{height:450px;border:1px solid #ccc;padding:15px;overflow:auto;margin-bottom:15px;border-radius:8px;background:#f9f9f9;}
+#text{width:70%;padding:12px;font-size:16px;border:1px solid #ccc}
+#button{padding:12px 24px;font-size:16px;background:#2b78e4;color:white;border:none;border-radius:6px;cursor:pointer;margin-left:8px}
+</style>
+</head>
+<body>
+<h2>聊天框</h2>
+<div id="box"></div>
+<input type="text" id="text" placeholder="输入">
+<button onclick="send()">发送</button>
+<script>
+let chat=document.getElementById("box")
+let put=document.getElementById("text")
+
+function send(){let tex=put.value;
+                let user="user1:";
+            chat.innerHTML+="<p>"+user+tex+"</p>";
+            put.value=""}
+// 把引号内替换成你自己的Render网址
+const socket = io("https://qqqqqqsssss.onrender.com");
+
+// 发送数据到服务器
+function sendData(msg){
+    socket.emit("chat", msg);
+}
+
+// 接收服务器广播过来的数据
+socket.on("chat", function(res){
+    console.log(res);
+});
+
+</script>
+</body>
+</html>
