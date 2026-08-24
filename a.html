@@ -15,13 +15,13 @@ body{max-width:800px;margin:30px auto;font-size:16px;}
 <h2>聊天框</h2>
 <div id="box"></div>
 <input type="text" id="text" placeholder="输入">
-<button onclick="send();sendData()">发送</button>
+<button onclick="send()">发送</button>
 <script>
 let chat=document.getElementById("box")
 let put=document.getElementById("text")
 const socket = io("https://qqqqqqsssss.onrender.com");
 function send(){let tex=put.value;
-                socket.emit("chat", tex);
+                socket.emit("chatt", tex);
                 let user="user1:";
             chat.innerHTML+="<p>"+user+tex+"</p>";
             put.value=""}
@@ -32,8 +32,8 @@ function send(){let tex=put.value;
 
 
 // 接收服务器广播过来的数据
-socket.on("chat", function(res){
-    chat.innerHTML+="<p>"+"user2"+res+"</p>";
+socket.on("chatt", function(res){
+    chat.innerHTML+="<p>"+"user2:"+res+"</p>";
 });
 
 </script>
