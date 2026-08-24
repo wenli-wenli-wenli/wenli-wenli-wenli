@@ -14,13 +14,13 @@ body{max-width:800px;margin:30px auto,font-size:16px;}
 <h2>聊天框</h2>
 <div id="box"></div>
 <input type="text" id="text" placeholder="输入">
-<button id="button" onclick="send()">发送</button>
+<button onclick="send()">发送</button>
 <script>
 let chat=document.getElementByld("box")
 let put=document.getElementByld("text")
-let btn=document.getElementByld("button")
+
 function send(){let tex=put.value;
-            chat.innerHTML+=`<p>${tex}</p>`;
+            chat.innerHTML+="<p>"+tex+"</p>";
             put.value=""}
 
 </script>
