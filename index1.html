@@ -6,4 +6,21 @@
   <style>
   </style>
 </head>
+<body>
+  <h2>聊天框</h2>
+  <div id="box"></div>
+  <input type="text" id="text" placeholder="输入">
+  <button id="button"></button>
+  <script>
+    let chat=document.getElementByld("box")
+    let put=document.getElementByld("text")
+    let btn=document.getElementByld("button")
+    function send(){let text=put.value;
+                    text=text.trim();
+                    if (text==""){return;}
+                    chat.innerHTML==chat.innerHTML+"<p>"+text+"</p>";
+                    put.value="";
+    btn.onclick=send;
+  </script>
+</body>
 </html>
