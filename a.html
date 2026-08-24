@@ -15,7 +15,7 @@ body{max-width:800px;margin:30px auto;font-size:16px;}
 <h2>聊天框</h2>
 <div id="box"></div>
 <input type="text" id="text" placeholder="输入">
-<button onclick="send()">发送</button>
+<button onclick="send();sendData()">发送</button>
 <script>
 let chat=document.getElementById("box")
 let put=document.getElementById("text")
@@ -28,8 +28,8 @@ function send(){let tex=put.value;
 const socket = io("https://qqqqqqsssss.onrender.com");
 
 // 发送数据到服务器
-function sendData(msg){
-    socket.emit("chat", msg);
+function sendData(){
+    socket.emit("chat", tex);
 }
 
 // 接收服务器广播过来的数据
