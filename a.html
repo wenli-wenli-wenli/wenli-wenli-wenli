@@ -34,7 +34,7 @@ function sendData(){
 
 // 接收服务器广播过来的数据
 socket.on("chat", function(res){
-    console.log(res);
+    chat.innerHTML+="<p>"+"user2"+res+"</p>";
 });
 
 </script>
