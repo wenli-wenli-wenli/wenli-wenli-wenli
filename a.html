@@ -19,18 +19,17 @@ body{max-width:800px;margin:30px auto;font-size:16px;}
 <script>
 let chat=document.getElementById("box")
 let put=document.getElementById("text")
-
+const socket = io("https://qqqqqqsssss.onrender.com");
 function send(){let tex=put.value;
+                socket.emit("chat", tex);
                 let user="user1:";
             chat.innerHTML+="<p>"+user+tex+"</p>";
             put.value=""}
-// 把引号内替换成你自己的Render网址
-const socket = io("https://qqqqqqsssss.onrender.com");
 
-// 发送数据到服务器
-function sendData(){
-    socket.emit("chat", tex);
-}
+
+
+
+
 
 // 接收服务器广播过来的数据
 socket.on("chat", function(res){
