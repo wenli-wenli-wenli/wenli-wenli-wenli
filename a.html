@@ -1,1 +1,24 @@
-
+<!DOCTYPE>
+<html lang="zh-CN">
+<head meta="utf-8">
+<style>
+body{width:70%;height:80%;border:3px solid blue;background-color:red}
+div{width:60%;height:60%;border:3px solid green}
+button{width:10%;height:20%;border:3px solid green}
+input{width:30%;height:20%;border:3px solid green}
+</style>
+</head>
+<body>
+<div id="div"></div>
+<button onclick="send()">发送</button>
+<input id="input" type="text">
+<script>
+let chat=document.getElementById("div");
+let put=document.getElementById("input");
+function send(){t=put.value;
+               chat.innerHTML+="<p>我"+t+"</p>";
+                put.value=""
+               }
+</script>
+</body>
+</html>
