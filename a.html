@@ -17,9 +17,13 @@ body > input{width:510px;height:30px;display:inline-block;float:left;margin-top:
 <script>
 let chat=document.getElementById("div");
 let put=document.getElementById("input");
+const socket=io();
+socket.on("chat",function(msg){chat.innerHTML+="<p>user2:"+msg+"</p>";chat.scrollTop=chat.scrollHeight})
+
 function send(){t=put.value;
                chat.innerHTML+="<p>我"+t+"</p>";
-                put.value=""
+                put.value="";
+                socket.emit("chat","user2:"+t)
                }
 </script>
 </body>
